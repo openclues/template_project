@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_template/core/services/push_notifications_service.dart';
 import 'core/common/constants/app_strings.dart';
 import 'core/services/local_storage.dart';
 // import 'core/services/push_notifications_service.dart';
@@ -10,7 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesService.instance.init();
   await di.init();
-  // await di.sl<PushNotificationsService>().initialize();
+  // await di.sl<PushNotificationsService>().initialize();\
+  await NotificationService.instance.initialize();
 
   runApp(const MyApp());
 }
